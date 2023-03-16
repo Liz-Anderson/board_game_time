@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+
     'board_game_time.apps.BoardGameTimeConfig',
+    'api.apps.ApiConfig',
+    
 ]
 
 MIDDLEWARE = [
