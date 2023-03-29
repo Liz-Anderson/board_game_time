@@ -1,4 +1,6 @@
+from webbrowser import get
 from django.db import models
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 
@@ -19,6 +21,8 @@ class Game(models.Model):
     min_age = models.IntegerField()
     rules = models.URLField()
     notes = models.TextField(blank=True)
+    owned_by = models.ManyToManyField(get_user_model(), related_name='owned', blank=True)
+    wish_list = models.ManyToManyField(get_user_model(), related_name='wishlist', blank=True)
 
     def __str__(self):
         return self.name
